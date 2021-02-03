@@ -18,4 +18,8 @@ async def on_ready():
     print('Logged in as {0.user}'.format(client))
     await client.change_presence(status=discord.Status.online, activity=discord.Game('CatBotCore 1.1-alpha Development Version Testing'))
 
-client.run('Bot_Token')
+
+with open(r'cogs\data\token.txt') as f:
+    token = f.read()
+
+client.run(token)
